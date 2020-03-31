@@ -20,4 +20,4 @@
 
 - name: Set GTK theme
   become_user: cg
-  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc'"
+  dconf: key="/org/gnome/desktop/interface/gtk-theme" value="'Arc-Dark'"

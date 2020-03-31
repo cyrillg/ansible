@@ -1,8 +1,7 @@
 - name: Install packages
-  apt: name={{item}}
-  with_items:
-    - htop
-    - ranger
-    - tmux
-    - vim
-    - git
+  apt: name=[
+    'htop',
+    'ranger',
+    'tmux',
+    'vim',
+    'git']

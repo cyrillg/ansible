@@ -7,3 +7,4 @@
   ufw:
     state: enabled
     policy: deny
+    log: yes

@@ -1,2 +1,6 @@
 ---
-# handlers file for network
+- name: restart_ssh
+  service:
+    name: ssh
+    state: restarted
+  listen: restart_ssh

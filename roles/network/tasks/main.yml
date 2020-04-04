@@ -1,3 +1,6 @@
 ---
 - name: Configure firewall
   import_tasks: firewall.yml
+
+- name: Configure ssh
+  import_tasks: ssh.yml

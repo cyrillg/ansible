@@ -1,2 +1,13 @@
 ---
-# tasks file for system
+- name: Setup cronjobs
+  import_tasks: cron.yml
+
+- name: Create folders
+  import_tasks: folders.yml
+
+- name: Set hostname
+  import_tasks: hostname.yml
+
+- name: Create users
+  import_tasks: users.yml
+  

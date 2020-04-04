@@ -1,12 +1,17 @@
 - hosts: localhost
   become: true
+  # become_user: cg
+  vars_files:
+    - config.yml
   pre_tasks:
     - name: update repositories
       apt: update_cache=yes
       changed_when: False
 
-  tasks:
-    - include: tasks/users.yml
-    - include: tasks/packages.yml
-    - include: tasks/cron.yml
-    - include: tasks/gnome.yml
+  roles:
+    - dev
+    - gui
+    - i3
+    - network
+    - system
+    - toolbox

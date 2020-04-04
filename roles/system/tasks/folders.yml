@@ -1,0 +1,9 @@
+- name: Create directories
+  file:
+    path: "{{ item }}"
+    state: directory
+  become_user: cg
+  with_items:
+    - '/home/cg/playground'
+    - '/home/cg/tmp'
+    - '/home/cg/.local/bin'

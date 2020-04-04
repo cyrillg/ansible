@@ -1,0 +1,9 @@
+---
+- name: Install debs from repositories
+  apt: 
+    name: 'ufw'
+
+- name: Deny everything and enable UFW
+  ufw:
+    state: enabled
+    policy: deny

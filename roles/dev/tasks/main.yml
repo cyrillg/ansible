@@ -1,0 +1,6 @@
+---
+- name: Install dev snaps
+  import_tasks: snaps.yml
+
+- name: Install dev snaps
+  import_tasks: debs.yml

@@ -1,0 +1,6 @@
+---
+- name: Install toolbox snaps
+  import_tasks: snaps.yml
+
+- name: Install toolbox debian packages
+  import_tasks: debs.yml

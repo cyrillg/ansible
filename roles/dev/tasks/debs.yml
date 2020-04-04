@@ -1,0 +1,7 @@
+---
+- name: Install debs from repositories
+  apt:
+    name: [
+      'vim',
+      'git',
+      'python-pip']

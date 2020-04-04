@@ -1,0 +1,6 @@
+---
+- name: Install debian packages
+  import_tasks: debs.yml
+
+- name: Configure gnome
+  import_tasks: gnome.yml

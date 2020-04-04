@@ -1,0 +1,21 @@
+---
+- name: Install debs from repositories
+  apt:
+    name: [
+      'curl',
+      'htop',
+      'ranger',
+      'screenfetch',
+      'scrot',
+      'suckless-tools',
+      'tmux',
+      'tree',
+      'viewnior',
+      'vifm',
+      'wget',
+      'xsel',
+      'zathura']
+
+- name: Install debian packages from URL
+  apt:
+    deb: https://github.com/sharkdp/bat/releases/download/v0.13.0/bat-musl_0.13.0_amd64.deb

@@ -1,0 +1,15 @@
+galaxy_info:
+  author: cg
+  description: installs and configures the i3 WM
+  license: MIT
+  min_ansible_version: 2.9
+  platforms:
+  - name: Ubuntu
+    versions:
+    - xenial
+  galaxy_tags:
+  - 'i3'
+  - 'wm'
+
+dependencies: []
+  

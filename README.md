@@ -15,4 +15,4 @@ Among other things, it installs and/or configures:
 
 1. Clone this repo: `git clone https://github.com/cyrillg/ansible.git`
 2. Fill in all fields in `config.yml.tmpl` and rename it `config.yml`
-3. Execute the command: `sudo ansible-playbook full.yml`
+3. From the root of the repo, execute the command: `sudo ./install`

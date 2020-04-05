@@ -11,6 +11,14 @@
       'i3status',
       'rofi']
 
+- name: Create i3 config directory
+  file:
+    path: "/home/{{ os_user }}/.config/i3"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
+
 - name: Install i3 main config file
   copy:
     src: i3.config
@@ -20,6 +28,14 @@
     owner: "{{ os_user }}"
     group: "{{ os_user }}"
     mode: '0644'
+
+- name: Create i3 config directory
+  file:
+    path: "/home/{{ os_user }}/.config/i3status"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
 
 - name: Install i3 status bar config file
   copy:

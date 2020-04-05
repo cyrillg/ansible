@@ -1,6 +1,15 @@
 ---
-- name: Install toolbox snaps
-  import_tasks: snaps.yml
+- name: Configure bash
+  import_tasks: bash.yml
+
+- name: Install custom binaries
+  import_tasks: bin.yml
 
 - name: Install toolbox debian packages
   import_tasks: debs.yml
+
+- name: Install and configure tmux
+  import_tasks: tmux.yml
+
+- name: Install and configure vim
+  import_tasks: vim.yml

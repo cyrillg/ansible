@@ -1,0 +1,9 @@
+---
+- name: Install debs from repositories
+  apt:
+    name: [
+      'gimp',
+      'scrot',
+      'suckless-tools',
+      'viewnior',
+      'zathura']

@@ -2,8 +2,7 @@
   file:
     path: "{{ item }}"
     state: directory
-  become_user: cg
+  become_user: "{{ os_user }}"
   with_items:
-    - '/home/cg/playground'
-    - '/home/cg/tmp'
-    - '/home/cg/.local/bin'
+    - "/home/{{ os_user }}/playground"
+    - "/home/{{ os_user }}/tmp"

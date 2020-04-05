@@ -1,0 +1,17 @@
+---
+- name: Install Slack
+  snap:
+    classic: yes
+    name: slack
+
+- name: Install Blender
+  snap:
+    classic: yes
+    name: blender
+
+- name: Install other snaps
+  snap:
+    name:
+      - brave
+      - vlc
+      - selflessheroes

@@ -13,3 +13,9 @@
     backup: 'yes'
     validate: '/usr/sbin/sshd -t -f %s'
   notify: restart_ssh
+
+- name: Allow all access to SSH tcp port
+  ufw:
+    rule: allow
+    port: "{{ ssh_port }}"
+    proto: tcp

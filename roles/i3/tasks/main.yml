@@ -1,6 +1,0 @@
----
-- name: Install i3 additional packages
-  apt:
-    name: [
-      ]
-    

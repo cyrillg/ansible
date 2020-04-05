@@ -1,0 +1,29 @@
+- name: Install bash config file
+  copy:
+    src: .bashrc
+    dest: "/home/{{ os_user }}/.bashrc"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Install bash aliases
+  copy:
+    src: .bash_aliases
+    dest: "/home/{{ os_user }}/.bash_aliases"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Configure bash bell
+  copy:
+    src: .inputrc
+    dest: "/home/{{ os_user }}/.inputrc"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

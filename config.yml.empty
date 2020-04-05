@@ -1,0 +1,13 @@
+# Fill the fields below and rename this file to 'config.yml'
+
+# OS
+os_user:
+os_hostname:
+
+# SSH
+ssh_port:
+ssh_allowed_users:
+
+# Git
+git_email:
+git_user:

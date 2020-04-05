@@ -1,0 +1,19 @@
+---
+- name: Install X configs
+  copy:
+    src: .Xresources
+    dest: "/home/{{ os_user }}/.Xresources"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Install xsettingsd config file
+  copy:
+    src: .xsettingsd
+    dest: "/home/{{ os_user }}/.xsettingsd"
+    force: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0755'

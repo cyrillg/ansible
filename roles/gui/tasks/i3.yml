@@ -1,0 +1,41 @@
+---
+- name: Add i3-gaps ppa
+  apt_repository:
+    repo: ppa:kgilmer/speed-ricer
+
+- name: Install debs from repositories
+  apt:
+    name: [
+      'i3-gaps',
+      'i3lock',
+      'i3status',
+      'rofi']
+
+- name: Install i3 main config file
+  copy:
+    src: i3.config
+    dest: "/home/{{ os_user }}/.config/i3/config"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Install i3 status bar config file
+  copy:
+    src: i3status.config
+    dest: "/home/{{ os_user }}/.config/i3status/config"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Configure caps lock as leader key
+  copy:
+    src: .Xmodmap
+    dest: "/home/{{ os_user }}/.Xmodmap"
+    force: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

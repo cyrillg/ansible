@@ -1,0 +1,14 @@
+---
+- name: Install compton from repositories
+  apt:
+    name: 'compton'
+
+- name: Install compton config file
+  copy:
+    src: compton.conf
+    dest: "/home/{{ os_user }}/.config/compton.conf"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

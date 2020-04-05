@@ -1,0 +1,24 @@
+---
+- name: Install tmux from repositories
+  apt:
+    name: 'tmux'
+
+- name: Install tmux config file
+  copy:
+    src: .tmux.conf
+    dest: "/home/{{ os_user }}/.tmux.conf"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Install tmux status bar config file
+  copy:
+    src: .tmux-status.conf
+    dest: "/home/{{ os_user }}/.tmux-status.conf"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

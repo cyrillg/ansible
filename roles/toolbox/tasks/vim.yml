@@ -1,0 +1,41 @@
+---
+- name: Install debs from repositories
+  apt:
+    name: 'vim'
+
+- name: Install vim config file
+  copy:
+    src: .vimrc
+    dest: "/home/{{ os_user }}/.vimrc"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Create vim config directory
+  file:
+    path: "/home/{{ os_user }}/.vim"
+    state: directory
+  become_user: "{{ os_user }}"
+
+- name: Install vim config folder
+  copy:
+    src: .vim/ftplugin
+    dest: "/home/{{ os_user }}/.vim/ftplugin"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Install Vundle VIM plugin manager
+  git:
+    repo: 'https://github.com/VundleVim/Vundle.vim.git'
+    dest: "/home/{{ os_user }}/.vim/bundle/vundle"
+  changed_when: False
+
+- name: Install plugins listed in .vimrc
+  command: vim +PluginInstall +qall
+  become_user: "{{ os_user }}"
+  changed_when: False

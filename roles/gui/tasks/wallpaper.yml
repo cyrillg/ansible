@@ -1,0 +1,13 @@
+---
+- name: Install wallpaper manager from repositories
+  apt:
+    name: 'hsetroot'
+
+- name: Copy wallpaper
+  copy:
+    src: wallpaper.jpg
+    dest: "/home/{{ os_user }}/.wallpaper.jpg"
+    force: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0600'

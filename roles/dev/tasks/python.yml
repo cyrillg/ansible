@@ -1,0 +1,5 @@
+---
+- name: Install python dependencies from repositories
+  apt:
+    name: [
+      'python-pip']

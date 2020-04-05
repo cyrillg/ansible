@@ -1,0 +1,6 @@
+---
+- name: Install other snaps
+  snap:
+    name:
+      - insomnia
+      - postman

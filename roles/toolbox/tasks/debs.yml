@@ -4,17 +4,13 @@
     name: [
       'curl',
       'htop',
+      'powerline',
       'ranger',
       'screenfetch',
-      'scrot',
-      'suckless-tools',
-      'tmux',
       'tree',
-      'viewnior',
       'vifm',
       'wget',
-      'xsel',
-      'zathura']
+      'xsel']
 
 - name: Install debian packages from URL
   apt:

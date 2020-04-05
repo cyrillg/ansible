@@ -1,0 +1,15 @@
+---
+- name: Install kotlin (1/2)
+  snap:
+    classic: yes
+    name: kotlin
+
+- name: Install kotlin (2/2)
+  snap:
+    classic: yes
+    name: kotlin-native
+
+- name: Install IDEA IntelliJ
+  snap:
+    classic: yes
+    name: intellij-idea-community

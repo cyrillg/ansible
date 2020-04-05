@@ -1,7 +1,4 @@
 ---
-- name: Setup cronjobs
-  import_tasks: cron.yml
-
 - name: Create folders
   import_tasks: folders.yml
 

@@ -1,0 +1,13 @@
+---
+- name: Install debs from repositories
+  apt:
+    name: 'git'
+
+- name: Install git config file
+  template:
+    src: '.gitconfig.j2'
+    dest: "/home/{{ os_user }}/.gitconfig"
+    force: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

@@ -1,0 +1,14 @@
+---
+- name: Install Node 13
+  snap:
+    name: node
+    classic: yes
+    channel: 13/stable
+
+- name: Add Yarn APT key
+  apt_key:
+    url: https://dl.yarnpkg.com/debian/pubkey.gpg
+
+- name: Install yarn from repositories
+  apt:
+    name: 'yarn'

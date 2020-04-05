@@ -1,0 +1,14 @@
+---
+- name: Install dunst from repositories
+  apt:
+    name: 'dunst'
+
+- name: Install dunst config file
+  copy:
+    src: dunstrc
+    dest: "/home/{{ os_user }}/.config/dunst/config"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

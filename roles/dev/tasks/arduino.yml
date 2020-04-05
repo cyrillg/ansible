@@ -1,0 +1,11 @@
+---
+- name: Install other snaps
+  snap:
+    name:
+      - arduino
+
+- name: Adding user to dialout  
+  user: 
+    name: "{{ os_user }}"
+    groups: dialout
+    append: yes

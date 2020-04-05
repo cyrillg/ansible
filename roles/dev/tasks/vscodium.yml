@@ -1,0 +1,5 @@
+---
+- name: Install VSCodium
+  snap:
+    classic: yes
+    name: codium

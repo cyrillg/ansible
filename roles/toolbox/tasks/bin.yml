@@ -1,0 +1,16 @@
+---
+- name: Create bin directory
+  file:
+    path: "/home/{{ os_user }}/.local"
+    state: directory
+  become_user: "{{ os_user }}"
+
+- name: Install custom binaries
+  copy:
+    src: bin
+    dest: "/home/{{ os_user }}/.local/bin"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

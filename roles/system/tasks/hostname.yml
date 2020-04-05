@@ -1,2 +1,2 @@
 - hostname:
-    name: "{{ hostname }}"
+    name: "{{ os_hostname }}"

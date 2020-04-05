@@ -3,6 +3,14 @@
   apt:
     name: 'dunst'
 
+- name: Create dunst config directory
+  file:
+    path: "/home/{{ os_user }}/.config/dunst"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
+
 - name: Install dunst config file
   copy:
     src: dunstrc

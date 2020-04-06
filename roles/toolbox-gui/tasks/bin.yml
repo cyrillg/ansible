@@ -1,0 +1,12 @@
+---
+- name: Install custom binaries
+  copy:
+    src: "bin/{{ item }}"
+    dest: "/home/{{ os_user }}/.local/bin"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+  with_items:
+    - change-resolution

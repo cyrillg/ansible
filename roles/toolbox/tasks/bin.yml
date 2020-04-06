@@ -1,16 +1,18 @@
 ---
 - name: Create bin directory
   file:
-    path: "/home/{{ os_user }}/.local"
+    path: "/home/{{ os_user }}/.local/bin"
     state: directory
   become_user: "{{ os_user }}"
 
 - name: Install custom binaries
   copy:
-    src: bin
-    dest: "/home/{{ os_user }}/.local/bin"
+    src: "bin/{{ item }}"
+    dest: "/home/{{ os_user }}/.local/bin/"
     force: yes
     backup: yes
     owner: "{{ os_user }}"
     group: "{{ os_user }}"
     mode: '0644'
+  with_items:
+    - sayhi

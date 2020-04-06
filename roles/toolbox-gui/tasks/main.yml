@@ -1,4 +1,7 @@
 ---
+- name: Install custom binaries
+  import_tasks: bin.yml
+
 - name: Install toolbox debian packages
   import_tasks: debs.yml
 

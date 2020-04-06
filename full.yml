@@ -8,9 +8,9 @@
       changed_when: False
 
   roles:
-    - dev
-    - gui
-    - network
     - system
+    - network
     - toolbox
+    - dev
     - toolbox-gui
+    - gui

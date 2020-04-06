@@ -8,5 +8,5 @@ galaxy_info:
     versions:
     - xenial
   galaxy_tags: []
-dependencies: []
+dependencies: ['toolbox']
   

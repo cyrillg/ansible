@@ -7,6 +7,6 @@
     backup: yes
     owner: "{{ os_user }}"
     group: "{{ os_user }}"
-    mode: '0644'
+    mode: '0755'
   with_items:
     - change-resolution

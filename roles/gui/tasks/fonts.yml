@@ -1,5 +1,5 @@
 ---
-- name: Create dunst config directory
+- name: Create fonts directory
   file:
     path: "/home/{{ os_user }}/.fonts"
     state: directory
@@ -7,10 +7,10 @@
     group: "{{ os_user }}"
   become_user: "{{ os_user }}"
 
-- name: Install dunst config file
+- name: Install fonts file
   copy:
     src: .fonts/icomoon
-    dest: "/home/{{ os_user }}/.fonts/icomoon"
+    dest: "/home/{{ os_user }}/.fonts/"
     force: yes
     backup: yes
     owner: "{{ os_user }}"

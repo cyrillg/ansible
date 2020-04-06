@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+for dir in ~/playground/*/; do
+    if [[ "$dir" != ~/playground/"*/" ]]; then
+        repo=$(basename "$dir")
+        alias g${repo}="cd $dir"
+    fi
+done

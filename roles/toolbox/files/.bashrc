@@ -112,6 +112,11 @@ if ! shopt -oq posix; then
   fi
 fi
 
+output=$(which generate_aliases)
+if [ ! -z "${output}" ]; then
+  . generate_aliases
+fi
+
 #----------------------------------------------------------------------
 # Custom PATH
 #----------------------------------------------------------------------

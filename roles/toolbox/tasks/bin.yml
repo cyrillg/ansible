@@ -15,4 +15,4 @@
     group: "{{ os_user }}"
     mode: '0755'
   with_items:
-    - sayhi
+    - generate_aliases

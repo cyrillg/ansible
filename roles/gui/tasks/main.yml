@@ -2,6 +2,9 @@
 - name: Configure i3
   import_tasks: i3.yml
 
+- name: Install fonts
+  import_tasks: fonts.yml
+
 - name: Configure compton
   import_tasks: compton.yml
 

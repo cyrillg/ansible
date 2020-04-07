@@ -1,0 +1,26 @@
+---
+- name: Install URXVT
+  apt:
+    name: 'rxvt-unicode'
+
+- name: Create urxvt tools directory
+  file:
+    path: "/home/{{ os_user }}/.urxvt/ext"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
+
+- name: Install urxvt tools
+  copy:
+    src: "urxvt/{{ item }}"
+    dest: "/home/{{ os_user }}/.urxvt/ext/"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0755'
+  with_items:
+    - clipboard
+    - keyboard-select
+    - url-select

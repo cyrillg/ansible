@@ -5,6 +5,9 @@
 - name: Install custom binaries
   import_tasks: bin.yml
 
+- name: Install powerline
+  import_tasks: powerline.yml
+
 - name: Install toolbox debian packages
   import_tasks: debs.yml
 

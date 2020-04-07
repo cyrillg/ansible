@@ -4,7 +4,6 @@
     name: [
       'curl',
       'htop',
-      'powerline',
       'ranger',
       'screenfetch',
       'tree',

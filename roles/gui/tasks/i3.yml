@@ -3,7 +3,7 @@
   apt_repository:
     repo: ppa:kgilmer/speed-ricer
 
-- name: Install debs from repositories
+- name: Install debs
   apt:
     name: [
       'i3-gaps',

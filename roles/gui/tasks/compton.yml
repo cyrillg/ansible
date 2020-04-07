@@ -1,5 +1,5 @@
 ---
-- name: Install compton from repositories
+- name: Install compton
   apt:
     name: 'compton'
 

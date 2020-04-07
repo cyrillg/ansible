@@ -43,10 +43,10 @@
 ! Font configuration
 ! ------------------------------------------------------------------------------
 
-URxvt*font:				xft:M+ 1mn:regular:size=10
-URxvt*boldFont:			xft:M+ 1mn:bold:size=10
-URxvt*italicFont:		xft:M+ 1mn:italic:size=10
-URxvt*boldItalicFont:	xft:M+ 1mn:bold italic:size=10
+URxvt*font:				xft:Ubuntu Mono:regular:size=10
+URxvt*boldFont:			xft:Ubuntu Mono:bold:size=10
+URxvt*italicFont:		xft:Ubuntu Mono:italic:size=10
+URxvt*boldItalicFont:	xft:Ubuntu Mono:bold italic:size=10
 
 
 ! ------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ URxvt*urgentOnBell:		true
 URxvt*depth:			24
 URxvt*scrollBar:		false
 URxvt*scrollBar_right:	false
-URxvt*internalBorder:	15
+URxvt*internalBorder:	10
 URxvt*externalBorder:	0
 URxvt.geometry:			84x22
 
@@ -112,7 +112,7 @@ URxvt.keysym.Control-Left:	\033[1;5D
 ! Rofi configs
 ! ------------------------------------------------------------------------------
 
-rofi.font:          M+ 1mn 25
+rofi.font:          Noto Sans 15
 rofi.color-enabled: true
 rofi.color-window:  #2e3440, #2e3440, #2e3440
 rofi.color-normal:  #2e3440, #d8dee9, #2e3440, #2e3440, #bf616a

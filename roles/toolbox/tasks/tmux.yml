@@ -1,5 +1,5 @@
 ---
-- name: Install tmux from repositories
+- name: Install tmux
   apt:
     name: 'tmux'
 

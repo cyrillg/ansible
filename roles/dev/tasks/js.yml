@@ -9,6 +9,6 @@
   apt_key:
     url: https://dl.yarnpkg.com/debian/pubkey.gpg
 
-- name: Install yarn from repositories
+- name: Install yarn
   apt:
     name: 'yarn'

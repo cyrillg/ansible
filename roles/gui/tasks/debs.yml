@@ -1,5 +1,5 @@
 ---
-- name: Install debs from repositories
+- name: Install debs
   apt:
     name: [
       'fonts-noto',

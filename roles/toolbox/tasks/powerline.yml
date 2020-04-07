@@ -1,0 +1,22 @@
+---
+- name: Install powerline
+  apt:
+    name: 'powerline'
+
+- name: Create powerline config directory
+  file:
+    path: "/home/{{ os_user }}/.config/powerline"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
+
+- name: Install powerline config file
+  copy:
+    src: powerline.config
+    dest: "/home/{{ os_user }}/.config/powerline/config.json"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'

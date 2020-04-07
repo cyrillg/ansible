@@ -1,5 +1,5 @@
 ---
-- name: Install wallpaper manager from repositories
+- name: Install wallpaper manager
   apt:
     name: 'hsetroot'
 

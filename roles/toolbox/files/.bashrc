@@ -92,10 +92,22 @@ fi
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
 #----------------------------------------------------------------------
+# Define i3-sensible-editor
+#----------------------------------------------------------------------
+
+TERMINAL=urxvt
+
+#----------------------------------------------------------------------
 # Alias definitions.
 #----------------------------------------------------------------------
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
+fi
+
+output=$(which generate_aliases)
+if [ ! -z "${output}" ]; then
+  . generate_aliases
 fi
 
 #----------------------------------------------------------------------
@@ -110,11 +122,6 @@ if ! shopt -oq posix; then
   elif [ -f /etc/bash_completion ]; then
     . /etc/bash_completion
   fi
-fi
-
-output=$(which generate_aliases)
-if [ ! -z "${output}" ]; then
-  . generate_aliases
 fi
 
 #----------------------------------------------------------------------

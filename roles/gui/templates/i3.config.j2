@@ -12,7 +12,7 @@ floating_modifier $super
 exec_always --no-startup-id hsetroot -full ~/.wallpaper.jpg
 exec --no-startup-id xsettingsd &
 # exec --no-startup-id compton -b
-exec --no-startup-id "change-resolution && i3-msg restart"
+exec --no-startup-id "change-resolution {{ horizontal_resolution }} {{ vertical_resolution }} {{ fps }} && i3-msg restart"
 exec --no-startup-id "xmodmap ~/.Xmodmap"
 
 # start a terminal

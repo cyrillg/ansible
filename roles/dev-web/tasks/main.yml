@@ -1,0 +1,12 @@
+---
+- name: DBs setup
+  import_tasks: db.yml
+
+- name: Java/Kotlin setup
+  import_tasks: java.yml
+
+- name: JS/Node setup
+  import_tasks: js.yml
+
+- name: API debugging tools
+  import_tasks: api.yml

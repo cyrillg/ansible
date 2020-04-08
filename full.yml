@@ -11,6 +11,8 @@
     - system
     - network
     - toolbox
-    - dev
+    - dev-common
+    - dev-web
+    - dev-robot
     - toolbox-gui
     - gui

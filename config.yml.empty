@@ -1,13 +1,18 @@
 # Fill the fields below and rename this file to 'config.yml'
 
 # OS
-os_user:
-os_hostname:
+os_user: # ex: "bob"
+os_hostname: # ex: "bob_home"
 
 # SSH
-ssh_port:
-ssh_allowed_users:
+ssh_port: # ex: "22"
+ssh_allowed_users: # ex: "bob jack"
 
 # Git
-git_email:
-git_user:
+git_email: # ex: "bob.cat@outlook.com"
+git_user: # ex: "bobc"
+
+# Monitor setup
+horizontal_resolution: # ex: "1920"
+vertical_resolution: # ex: "1080"
+fps: # ex: "60"

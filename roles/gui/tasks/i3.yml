@@ -20,8 +20,8 @@
   become_user: "{{ os_user }}"
 
 - name: Install i3 main config file
-  copy:
-    src: i3.config
+  template:
+    src: i3.config.j2
     dest: "/home/{{ os_user }}/.config/i3/config"
     force: yes
     backup: yes

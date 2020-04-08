@@ -1,0 +1,9 @@
+---
+- name: Git setup
+  import_tasks: git.yml
+
+- name: Python setup
+  import_tasks: python.yml
+
+- name: VSCodium setup
+  import_tasks: vscodium.yml

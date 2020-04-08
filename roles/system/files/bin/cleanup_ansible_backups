@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+set -e
+
+files="$(find /home -type f -name *.*.*-*-*@*:*:*\~)"
+find /home -type f -name *.*.*-*-*@*:*:*\~ -delete
+touch /tmp/cleanup-report.log
+echo "$files" > /tmp/cleanup-report.log
+date >> /tmp/cleanup-report.log

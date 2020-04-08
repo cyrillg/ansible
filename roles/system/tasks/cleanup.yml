@@ -1,0 +1,24 @@
+---
+- name: Create bin directory
+  file:
+    path: "/home/{{ os_user }}/.local/bin"
+    state: directory
+  become_user: "{{ os_user }}"
+
+- name: Install custom binaries
+  copy:
+    src: "bin/{{ item }}"
+    dest: "/home/{{ os_user }}/.local/bin/"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0755'
+  with_items:
+    - cleanup_ansible_backups
+
+- name: Add boot-time cleanup of Ansible backup files
+  cron:
+    name: "cleanup ansible backups"
+    special_time: reboot
+    job: "/home/{{ os_user }}/.local/bin/cleanup_ansible_backups"

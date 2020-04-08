@@ -9,7 +9,7 @@ font pango: Noto Sans 8
 floating_modifier $super
 
 #autostart
-exec_always --no-startup-id hsetroot -full ~/.wallpaper.jpg
+exec_always --no-startup-id hsetroot -full ~/.config/wallpaper/current.jpg
 exec --no-startup-id xsettingsd &
 # exec --no-startup-id compton -b
 exec --no-startup-id "change-resolution {{ horizontal_resolution }} {{ vertical_resolution }} {{ fps }} && i3-msg restart"

@@ -8,3 +8,6 @@
 - name: Create users
   import_tasks: users.yml
   
+- name: Setup periodical file cleanup
+  import_tasks: cleanup.yml
+  

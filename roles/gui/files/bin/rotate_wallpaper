@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+set -e
+
+wallpaper_folder="$HOME/.config/wallpaper/"
+. ${wallpaper_folder}/wallpaper.conf
+day=$((10#$(date +%j)))
+rotation_window="$(ls -l $wallpaper_folder/pictures/$wallpaper_series/ | grep .jpg | wc -l)"
+current=$((10#$day % $rotation_window))
+
+if [[ "$current" -eq 0 ]]; then current=7; fi
+if [[ -f "$wallpaper_folder/current.jpg" ]]; then rm -rf "$wallpaper_folder/current.jpg"; fi
+ln -s "$wallpaper_folder/pictures/$wallpaper_series/$current.jpg" "$wallpaper_folder/current.jpg"
+i3-msg restart

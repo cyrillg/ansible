@@ -43,6 +43,7 @@ alias gld='git log --pretty=format:"%h %ad %s" --date=short --all'
 alias gm="git merge"
 alias gmm="git merge master"
 alias gp="git push"
+alias gpf="git push -f"
 alias gpl="git pull"
 alias gst="git status"
 

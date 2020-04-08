@@ -3,11 +3,54 @@
   apt:
     name: 'hsetroot'
 
-- name: Copy wallpaper
+- name: Create bin directory
+  file:
+    path: "/home/{{ os_user }}/.local/bin"
+    state: directory
+  become_user: "{{ os_user }}"
+
+- name: Install custom binaries
   copy:
-    src: wallpaper.jpg
-    dest: "/home/{{ os_user }}/.wallpaper.jpg"
+    src: "bin/{{ item }}"
+    dest: "/home/{{ os_user }}/.local/bin/"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0755'
+  with_items:
+    - rotate_wallpaper
+
+- name: Create wallpaper config directory
+  file:
+    path: "/home/{{ os_user }}/.config/wallpaper"
+    state: directory
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+  become_user: "{{ os_user }}"
+
+- name: Copy wallpapers
+  copy:
+    src: wallpapers/
+    dest: "/home/{{ os_user }}/.config/wallpaper/pictures/"
     force: yes
     owner: "{{ os_user }}"
     group: "{{ os_user }}"
     mode: '0600'
+
+- name: Install wallpaper config file
+  copy:
+    src: wallpaper.conf
+    dest: "/home/{{ os_user }}/.config/wallpaper/wallpaper.conf"
+    force: yes
+    backup: yes
+    owner: "{{ os_user }}"
+    group: "{{ os_user }}"
+    mode: '0644'
+
+- name: Add boot-time check for wallpaper rotation
+  cron:
+    name: "rotate wallpaper"
+    special_time: reboot
+    user: "{{ os_user }}"
+    job: "/home/{{ os_user }}/.local/bin/rotate_wallpaper"

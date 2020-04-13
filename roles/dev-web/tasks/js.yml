@@ -1,9 +1,20 @@
 ---
-- name: Install Node 13
-  snap:
-    name: node
-    classic: yes
-    channel: 13/stable
+- name: Download NodeJS 13 script
+  get_url:
+    url: https://deb.nodesource.com/setup_13.x
+    dest: /tmp
+    mode: 755
+
+- name: Setup Node.js
+  command: /tmp/setup_13.x
+
+- name: Install NodeJS 13
+  apt:
+    name: [
+      'nodejs',
+      'gcc',
+      'g++',
+      'make']
 
 - name: Add Yarn APT key
   apt_key:

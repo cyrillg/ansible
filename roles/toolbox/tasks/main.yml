@@ -2,6 +2,9 @@
 - name: Configure bash
   import_tasks: bash.yml
 
+- name: Install docker
+  import_tasks: docker.yml
+
 - name: Install custom binaries
   import_tasks: bin.yml
 

@@ -101,7 +101,8 @@ TERMINAL=urxvt
 # Editor preference
 #----------------------------------------------------------------------
 
-VISUAL=nano
+EDITOR=vim
+VISUAL=codium
 
 #----------------------------------------------------------------------
 # Alias definitions.
@@ -131,11 +132,10 @@ if ! shopt -oq posix; then
 fi
 
 #----------------------------------------------------------------------
-# Custom PATH
+# Java
 #----------------------------------------------------------------------
 
-export PATH=$PATH:~/.vimpkg/bin
-export PATH=$PATH:~/.local/bin
+export JAVA_HOME=/usr/local/java/jdk1.8.0_241/
 
 #----------------------------------------------------------------------
 # ROS 1
@@ -148,6 +148,14 @@ export PATH=$PATH:~/.local/bin
 #----------------------------------------------------------------------
 
 #source /opt/ros/eloquent/setup.bash
+
+#----------------------------------------------------------------------
+# Custom PATH
+#----------------------------------------------------------------------
+
+export PATH=$PATH:~/.vimpkg/bin
+export PATH=$PATH:~/.local/bin
+export PATH=$PATH:$JAVA_HOME/bin
 
 #----------------------------------------------------------------------
 # Powerline configuration

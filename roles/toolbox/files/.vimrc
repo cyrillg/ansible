@@ -27,6 +27,8 @@ Plugin 'easymotion/vim-easymotion'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'udalov/kotlin-vim'
+
 filetype plugin indent on
 
 " -------------- NERD Tree config
